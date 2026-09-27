@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://typhaine-charrat-art-portfolio.netlify.app/sitemap.xml
