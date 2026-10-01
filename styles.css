@@ -194,6 +194,17 @@ blockquote,.margin-word{font-style:italic}
 @media(max-width:820px){.pair-d{width:100%;grid-template-columns:.38fr 1.62fr}.pair-d .after{width:100%}.pair-d:after{right:0}.h1,.h2,.h3,.h4{transform:none}.objects{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:none;gap:5vh 4vw;min-height:0;align-items:end}.objects figure,.objects figure:nth-child(3n),.objects figure:nth-child(4n+2){grid-column:auto/span 2;grid-row:auto}.objects figure:nth-child(3n+2){transform:translateY(3vh)!important}.cycle{min-height:105vh;grid-template-columns:1fr 1fr;column-gap:8vw}.cycle-copy{grid-column:1/-1}.bone-a{transform:translateY(5vh)}.bone-b{transform:translateY(-4vh)}.bone-a .bone{height:47vh}.bone-b .bone{height:58vh}}
 @media(max-width:480px){.pair-d{grid-template-columns:1fr}.objects{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:7vh 9vw;min-height:0}.objects figure,.objects figure:nth-child(3n),.objects figure:nth-child(4n+2){grid-column:auto;grid-row:auto}.cycle{column-gap:3vw}.bone-a .bone{height:39vh}.bone-b .bone{height:48vh}}
 
+/* S01 — deux états d'une même grammaire : libre puis mise en index. */
+.grammar-figure{grid-column:1/-1;grid-row:3;width:min(78vw,1080px);justify-self:center;margin:10vh 0 2vh}
+.grammar-images{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(180px,.78fr);gap:clamp(1.25rem,3vw,3.5rem);align-items:end}
+.grammar-images img{width:100%;height:auto;object-fit:contain}
+.grammar-live{transform:translateY(2vh)}
+.grammar-index{margin-bottom:8vh}
+.grammar-figure figcaption{margin:.9rem 0 0 auto;width:max-content;max-width:100%;font-size:.69rem;line-height:1.45;letter-spacing:.035em;color:var(--muted);text-align:right}
+.grammar-figure figcaption em{font-family:var(--serif);font-size:1rem;color:var(--ink)}
+@media(max-width:820px){.grammar-figure{grid-column:1;grid-row:auto;width:100%;margin:7vh 0 2vh}.grammar-images{grid-template-columns:minmax(0,1.4fr) minmax(130px,.72fr);gap:5vw}.grammar-index{margin-bottom:5vh}}
+@media(max-width:620px){.grammar-images{grid-template-columns:1fr}.grammar-live{transform:none}.grammar-index{width:72%;margin:-2vh 0 0 auto}.grammar-figure figcaption{width:72%}}
+
 /* Du miroir au protocole : une même image, deux opérations distinctes. */
 .ai-application{min-height:112vh;padding:10vh var(--pad) 15vh;background:linear-gradient(180deg,#171715 0 43%,var(--paper) 43%);display:grid;grid-template-columns:minmax(170px,.42fr) minmax(0,1.35fr);gap:4vw;align-items:center;overflow:hidden}
 .ai-application figure{margin:0;position:relative}
