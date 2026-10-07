@@ -522,3 +522,60 @@ h1,h2{font-variation-settings:"SOFT" 30,"WONK" 1}
 @media(max-width:820px){.library .objects{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5rem 7vw;margin-top:2.5rem}.library .objects figure:nth-child(n){padding-top:0}.library .objects figure:nth-child(even){padding-top:1.5rem}.library .objects figure:nth-child(n) img{height:clamp(150px,27vw,220px)}.library .objects figcaption span{font-size:.85rem}.library .objects figcaption strong{font-size:.8rem}}
 @media(max-width:480px){.origin .grammar-images{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}.origin .grammar-index{width:100%;margin-top:2rem}.origin .grammar-figure{margin-top:2rem}.origin .grammar-figure figcaption{font-size:.8rem}.principles div{display:block}}
 @media(max-width:359px){.library .objects{grid-template-columns:1fr}.library .objects figure:nth-child(n){padding-top:0}.library .objects figure:nth-child(n) img{height:210px}.library .objects figure:nth-child(n) figcaption{max-width:260px;margin-inline:auto}}
+
+/* Essai indépendant : l’image reste nette, le seuil se dissout progressivement. */
+.cover-photo{position:relative;min-width:0;overflow:hidden;height:100%;isolation:isolate}
+.cover-photo .hero-field{height:100%;width:100%}
+.cover-veil{position:absolute;inset:auto 0 0;height:clamp(130px,25vh,260px);pointer-events:none;background:linear-gradient(to bottom,transparent 0%,rgba(246,245,240,.04) 30%,rgba(246,245,240,.35) 73%,var(--paper) 100%)}
+.cover-veil:before,.cover-veil:after{content:"";position:absolute;inset:0;pointer-events:none}
+.cover-veil:before{backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);mask-image:linear-gradient(transparent 0%,black 78%);-webkit-mask-image:linear-gradient(transparent 0%,black 78%)}
+.cover-veil:after{backdrop-filter:blur(var(--threshold-blur,12px));-webkit-backdrop-filter:blur(var(--threshold-blur,12px));mask-image:linear-gradient(transparent 28%,black 100%);-webkit-mask-image:linear-gradient(transparent 28%,black 100%)}
+body[data-seuil="subtil"]{--threshold-blur:6px}body[data-seuil="subtil"] .cover-veil{height:clamp(100px,18vh,190px)}
+body[data-seuil="aucun"] .cover-veil{display:none}
+/* Quelques fins de champs s’assouplissent, les documents gardent leur intégrité. */
+body[data-douceur="oui"] .sat-detail.one{border-radius:2px 44px 3px 2px}
+body[data-douceur="oui"] .sat-detail.two{border-radius:3px 2px 2px 36px}
+body[data-douceur="oui"] .grammar-live{border-radius:3px 34px 3px 3px}
+body[data-douceur="oui"] .grammar-index{border-radius:3px 3px 26px 3px}
+body[data-douceur="oui"] .mirror-world{border-radius:0 0 56px 0}
+body[data-douceur="oui"] .sat-main{background:radial-gradient(ellipse at center,var(--deep) 45%,var(--paper) 75%)}
+body[data-douceur="oui"] .poly-threshold{background:linear-gradient(100deg,#111 0%,#111 39%,#77786e 49%,var(--paper) 59%)}
+.trial-controls{position:fixed;bottom:16px;right:16px;z-index:80;width:min(290px,calc(100vw - 32px));padding:12px 16px;background:rgba(246,245,240,.97);color:var(--ink);border:1px solid #c9ccbb;border-radius:16px;box-shadow:0 6px 24px #292a2512;font:400 .85rem/1.5 var(--sans)}
+.trial-controls summary{cursor:pointer;font-weight:500;min-height:24px}.trial-controls label{display:block;margin-top:12px}.trial-controls select{display:block;width:100%;margin-top:5px;padding:8px;border:1px solid #b8bcae;border-radius:6px;background:var(--paper);color:var(--ink);font:inherit}.trial-controls small{display:block;margin-top:10px;font-size:.75rem}.trial-controls button{font:inherit;border:0;background:transparent;text-decoration:underline;color:var(--ink);cursor:pointer;padding:8px 0 0}
+@media(min-width:821px){.cover-photo{min-height:650px}}
+@media(max-width:820px){.cover-photo{height:58vh}.cover-photo .hero-field{height:100%;min-height:0}.cover-veil{height:20vh}body[data-douceur="oui"] .mirror-world{border-radius:0 0 36px 0}body[data-douceur="oui"] .poly-threshold{background:linear-gradient(180deg,#111 0%,#111 40%,#77786e 50%,var(--paper) 60%)}.trial-controls{bottom:10px;right:10px}}
+@media print{.trial-controls{display:none}}
+
+/* Invitation placée dans le seuil, lisible même lorsque le flou est désactivé. */
+.enter-reverie{position:absolute;bottom:24px;left:clamp(22px,4vw,64px);z-index:3;display:inline-flex;align-items:center;gap:24px;padding:10px 16px;color:var(--ink);background:rgba(246,245,240,.9);border-radius:24px;text-decoration:none;font:400 1rem/1.5 var(--sans);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.enter-reverie span{font-size:1.25rem}.enter-reverie:hover{background:var(--paper)}.enter-reverie:focus-visible{outline:2px solid var(--accent-text);outline-offset:4px}
+/* Les bords des détails se dissolvent ; leur centre reste net. */
+.soft-photo{position:relative;overflow:hidden;isolation:isolate}.soft-photo>img{width:100%;height:100%;object-fit:cover}.photo-edge{position:absolute;inset:auto 0 0;height:16%;pointer-events:none;background:linear-gradient(transparent,var(--paper));backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);mask-image:linear-gradient(transparent,black);-webkit-mask-image:linear-gradient(transparent,black)}
+body[data-douceur="non"] .photo-edge{display:none}
+body[data-douceur="oui"] .material-detail.d1{border-radius:3px 42px 3px 3px}
+body[data-douceur="oui"] .material-detail.d2{border-radius:3px 3px 3px 38px}
+body[data-douceur="oui"] .lamp-sketch{border-radius:3px 42px 3px 3px}
+body[data-douceur="oui"] .lamp-matter{border-radius:38px 3px 3px 3px}
+/* Feuilles : une dernière présence sur l’axe du passage au polyéthylène. */
+.library .objects figure.material-bridge:nth-child(n){grid-column:2/span 2;justify-self:end;width:min(100%,300px);padding:0;margin:1rem 0 0}
+.library .objects figure.material-bridge:nth-child(n) img{height:240px;object-fit:contain;transform:rotate(-8deg);transform-origin:center}
+.library .objects figure.material-bridge:nth-child(n) figcaption{margin-top:1.2rem;max-width:240px;margin-left:auto}
+.library:has(.material-bridge){padding-bottom:3rem}
+@media(min-width:821px) and (max-width:1150px){.library .objects figure.material-bridge:nth-child(n){grid-column:2/span 1;width:100%;margin-top:1rem}.library .objects figure.material-bridge:nth-child(n) img{height:220px}}
+@media(max-width:820px){.enter-reverie{bottom:18px;left:22px;font-size:.95rem}.library .objects figure.material-bridge:nth-child(n){grid-column:1/-1;width:min(65%,280px);justify-self:center;margin-top:1rem}.library .objects figure.material-bridge:nth-child(n) img{height:220px}.library .objects figure.material-bridge:nth-child(n) figcaption{max-width:none;margin-left:0}.library:has(.material-bridge){padding-bottom:2rem}}
+@media(max-width:359px){.library .objects figure.material-bridge:nth-child(n){width:85%}}
+
+/* Révision : invitation dans la colonne de lecture ; matières de S06 nettes. */
+.hero-copy .enter-reverie{position:static;display:inline-flex;margin-top:2rem;padding:8px 0;border-radius:0;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;color:var(--accent-text);font-size:.95rem;gap:18px;text-decoration:none}
+.hero-copy .enter-reverie:hover{text-decoration:underline;text-underline-offset:5px;background:transparent}
+.library .objects figure.material-bridge:nth-child(n) img{transform:none}
+
+/* Deux présences dans le flux : coquilles en retrait, feuilles plus à droite. */
+.library .objects .material-passage{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.65fr) minmax(0,.35fr) minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(18px,3vw,44px);align-items:start;margin:1rem 0 0}
+.library .objects .material-passage figure.bridge-companion:nth-child(n){grid-column:2;grid-row:1;width:100%;padding:0;margin:0}
+.library .objects .material-passage figure.bridge-companion:nth-child(n) img{height:160px}
+.library .objects .material-passage figure.material-bridge:nth-child(n){grid-column:4;grid-row:1;width:100%;max-width:300px;justify-self:start;padding:0;margin:3.5rem 0 0}
+.library .objects .material-passage figure.material-bridge:nth-child(n) img{height:240px;transform:none}
+.library .objects .material-passage figcaption{margin-top:.8rem;max-width:100%}
+@media(max-width:820px){.library .objects .material-passage{grid-template-columns:minmax(0,.2fr) minmax(0,.8fr) minmax(0,.15fr) minmax(0,1.1fr);gap:18px;margin-top:1rem}.library .objects .material-passage figure.bridge-companion:nth-child(n){grid-column:2}.library .objects .material-passage figure.bridge-companion:nth-child(n) img{height:130px}.library .objects .material-passage figure.material-bridge:nth-child(n){grid-column:4;margin-top:3rem}.library .objects .material-passage figure.material-bridge:nth-child(n) img{height:180px}}
+@media(max-width:359px){.library .objects .material-passage{grid-template-columns:minmax(0,.8fr) minmax(0,1.1fr);gap:24px}.library .objects .material-passage figure.bridge-companion:nth-child(n){grid-column:1}.library .objects .material-passage figure.material-bridge:nth-child(n){grid-column:2}.library .objects .material-passage figure.bridge-companion:nth-child(n) img{height:100px}.library .objects .material-passage figure.material-bridge:nth-child(n) img{height:150px}}
