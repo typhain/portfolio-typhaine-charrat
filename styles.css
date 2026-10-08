@@ -579,3 +579,35 @@ body[data-douceur="oui"] .lamp-matter{border-radius:38px 3px 3px 3px}
 .library .objects .material-passage figcaption{margin-top:.8rem;max-width:100%}
 @media(max-width:820px){.library .objects .material-passage{grid-template-columns:minmax(0,.2fr) minmax(0,.8fr) minmax(0,.15fr) minmax(0,1.1fr);gap:18px;margin-top:1rem}.library .objects .material-passage figure.bridge-companion:nth-child(n){grid-column:2}.library .objects .material-passage figure.bridge-companion:nth-child(n) img{height:130px}.library .objects .material-passage figure.material-bridge:nth-child(n){grid-column:4;margin-top:3rem}.library .objects .material-passage figure.material-bridge:nth-child(n) img{height:180px}}
 @media(max-width:359px){.library .objects .material-passage{grid-template-columns:minmax(0,.8fr) minmax(0,1.1fr);gap:24px}.library .objects .material-passage figure.bridge-companion:nth-child(n){grid-column:1}.library .objects .material-passage figure.material-bridge:nth-child(n){grid-column:2}.library .objects .material-passage figure.bridge-companion:nth-child(n) img{height:100px}.library .objects .material-passage figure.material-bridge:nth-child(n) img{height:150px}}
+
+/* Essai de couture : vue nette, en contrepoint du bois et des fragments. */
+.lamp .ivy-study{grid-column:1/-1;grid-row:auto;justify-self:end;width:min(54%,650px);margin:3rem var(--pad) 0 0;align-self:start}
+.lamp .ivy-study img{display:block;width:100%;height:auto;aspect-ratio:1.05;object-fit:cover;object-position:50% 54%;border-radius:0;filter:none;mask-image:none}
+.lamp .ivy-study figcaption{font:400 .85rem/1.5 var(--sans);color:var(--ink);margin:.9rem 0 0;max-width:580px}
+@media(max-width:820px){.lamp .ivy-study{grid-column:1;grid-row:auto;width:82%;justify-self:end;margin:2rem var(--pad) 0 0}.lamp .ivy-study figcaption{font-size:.82rem}}
+@media(max-width:480px){.lamp .ivy-study{width:calc(100% - 2 * var(--pad));justify-self:center;margin:2rem 0 0}}
+
+/* Le bois et la couture appartiennent au même champ de recherche. */
+.lamp .lamp-material-studies{grid-area:matter;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);align-items:start;gap:clamp(18px,2.2vw,36px);padding-right:var(--pad);min-width:0}
+.lamp .lamp-material-studies .lamp-matter{grid-area:auto;width:100%;height:auto;max-height:430px;object-fit:contain;padding:0;margin:0;align-self:start}
+.lamp .lamp-material-studies .ivy-study{grid-column:2;grid-row:1;justify-self:stretch;align-self:start;width:100%;max-width:none;margin:clamp(45px,9vh,110px) 0 0;min-width:0}
+.lamp .lamp-material-studies .ivy-study img{aspect-ratio:.9;object-fit:cover;object-position:50% 55%;filter:brightness(1.38) saturate(.9);border-radius:0}
+.lamp .lamp-material-studies .ivy-study figcaption{font-size:.8rem;line-height:1.5;margin-top:.8rem;max-width:100%}
+@media(max-width:820px){.lamp .lamp-material-studies{grid-area:matter;grid-column:1;grid-row:auto;max-width:100%;padding:0 var(--pad);gap:22px}.lamp .lamp-material-studies .lamp-matter{height:auto;max-height:none;max-width:100%;padding:0}.lamp .lamp-material-studies .ivy-study{width:100%;margin:3rem 0 0;grid-column:2;grid-row:1}}
+@media(max-width:420px){.lamp .lamp-material-studies{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:16px}.lamp .lamp-material-studies .ivy-study figcaption{font-size:.75rem}.lamp .lamp-material-studies .ivy-study{margin-top:2rem}}
+
+/* S09 : deux colonnes autonomes, sans rangées étirées par la hauteur du dessin. */
+.lamp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:none;grid-template-rows:auto;gap:clamp(28px,4vw,64px);align-items:start;padding:2rem var(--pad) 3rem}
+.lamp-concept,.lamp-research{min-width:0;align-self:start}
+.lamp .lamp-sketch{grid-area:auto;display:block;width:100%;height:auto;object-fit:contain;object-position:center;max-height:none}
+.lamp .lamp-caption{grid-area:auto;margin:1rem 0 0;width:auto;max-width:100%}
+.lamp .lamp-copy{grid-area:auto;padding:0;max-width:none;margin:0}
+.lamp .lamp-copy h2{font-size:clamp(2rem,3.3vw,3.5rem)}
+.lamp .lamp-material-studies{grid-area:auto;grid-row:auto;grid-column:auto;margin:1.5rem 0 0;padding:0;column-gap:24px;row-gap:1rem;align-items:start}
+.lamp .lamp-material-studies .lamp-matter{grid-column:1;grid-row:1;width:100%;height:auto;max-height:none}
+.lamp .lamp-material-studies .ivy-study{grid-column:2;grid-row:1/span 2;margin:2rem 0 0;width:100%}
+.lamp .lamp-material-studies .lamp-fragments{grid-column:1;grid-row:2;grid-area:auto;width:85%;height:auto;max-height:190px;object-fit:contain;justify-self:center;transform:none;margin:0}
+@media(max-width:820px){.lamp{grid-template-columns:1fr;grid-template-areas:none;gap:2rem;padding:1rem var(--pad) 2rem}.lamp .lamp-sketch{max-height:650px;object-fit:contain}.lamp .lamp-material-studies{padding:0;gap:1rem}.lamp .lamp-material-studies .ivy-study{margin-top:1.5rem}.lamp .lamp-material-studies .lamp-fragments{max-height:170px}}
+
+.lamp .lamp-material-studies .oak-study{grid-column:1;grid-row:1;margin:0;min-width:0;width:100%}
+.lamp .oak-study figcaption{font:400 .8rem/1.5 var(--sans);color:var(--ink);margin:.8rem 0 0}
