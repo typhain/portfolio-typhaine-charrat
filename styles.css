@@ -611,3 +611,19 @@ body[data-douceur="oui"] .lamp-matter{border-radius:38px 3px 3px 3px}
 
 .lamp .lamp-material-studies .oak-study{grid-column:1;grid-row:1;margin:0;min-width:0;width:100%}
 .lamp .oak-study figcaption{font:400 .8rem/1.5 var(--sans);color:var(--ink);margin:.8rem 0 0}
+
+/* Deux recherches distinctes : lampe puis vitrail, chacune avec ses preuves. */
+.lamp .lamp-material-studies{grid-template-columns:minmax(0,1fr) minmax(0,.8fr)}
+.lamp .lamp-material-studies .lamp-fragments{grid-column:2;grid-row:1;width:100%;height:auto;max-height:240px;margin-top:2rem;align-self:center}
+.vitrail-study{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,76px);align-items:center;padding:2rem var(--pad) 4rem}
+.vitrail-copy{max-width:510px}.vitrail-copy h2{font-size:clamp(2.2rem,3.8vw,4rem)}
+.vitrail-carnet{margin:0;min-width:0;width:100%;max-width:670px;justify-self:end}
+.vitrail-carnet img{width:100%;height:auto;display:block;filter:none;border-radius:0;object-fit:contain}
+.vitrail-carnet figcaption{font:400 .85rem/1.5 var(--sans);color:var(--ink);margin:.9rem 0 0}
+@media(max-width:820px){.vitrail-study{grid-template-columns:1fr;gap:1.5rem;padding:1rem var(--pad) 3rem}.vitrail-copy{max-width:100%}.vitrail-carnet{width:100%;max-width:600px;justify-self:center}.lamp .lamp-material-studies .lamp-fragments{grid-column:2;grid-row:1;max-height:190px;margin-top:1.5rem}}
+/* Les deux recherches appartiennent au même mouvement de S09. */
+.vitrail-study{padding-top:0;padding-bottom:2.5rem;gap:clamp(24px,4vw,56px)}
+.vitrail-carnet{max-width:480px;justify-self:center}
+.vitrail-copy{max-width:510px}
+@media(max-width:820px){.vitrail-study{padding-top:0;padding-bottom:2rem}.vitrail-carnet{max-width:440px}}
+.vitrail-copy > .section-no{color:var(--olive,#747654)}
